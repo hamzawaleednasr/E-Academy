@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %} 
+
+    <body>
+        <!-- Header Start -->
+        <div class="container-fluid page-header" style="margin-bottom: 90px;">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-4 text-white text-uppercase">{% trans 'About' %}</h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/">{% trans 'Home' %}</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">{% trans 'About' %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- About Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ image.image.url }}" alt="">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="text-left mb-4">
+                            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">{% trans 'About Us' %}</h5>
+                            <h1>{% trans 'Innovative Way To Learn' %}</h1>
+                        </div>
+                        <p>{% trans 'Welcome to E-COURSES, your go-to destination for online education.' %} <br> {% trans 'We offer a wide range of high-quality courses and informative articles to empower learners of all levels.' %} <br> {% trans 'Join us on a journey of continuous learning and personal growth.' %} <br> {% trans 'Thank you for choosing E-COURSES as your trusted source of knowledge.' %}</p>
+                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">{% trans 'Learn More' %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        {% include 'common/testimonial.html' %}
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    </body>
+{% endblock content %}

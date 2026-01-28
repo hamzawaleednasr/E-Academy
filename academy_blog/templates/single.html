@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block content %}
+
+    <body>
+        <!-- Header Start -->
+        <div class="container-fluid page-header" style="margin-bottom: 90px;">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                    <h3 class="display-4 text-white text-uppercase"> {{ art.category.title }} {% trans 'article' %} </h3>
+                    <div class="d-inline-flex text-white">
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/">{% trans 'Home' %}</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">{% trans 'article' %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- Detail Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="mb-5">
+                            <h6 class="text-primary mb-3"> {{ art.created_at|naturaltime }} </h6>
+                            <h1 class="mb-5"> {{ art.title }} </h1>
+                            <hr>
+                            {{ art.subject|safe }}
+                            <hr>
+                            {% if user.is_authenticated and user.is_staff %}
+                                <a href="{% url 'article_update' art.id %}">
+                                    <button class="btn btn-primary btn-block">
+                                        {% trans 'Edit article' %}
+                                    </button>
+                                </a>
+                                <hr>
+                                <a href="{% url 'article_delete' art.id %}">
+                                    <button class="btn btn-danger btn-block">
+                                        {% trans 'Delete article' %}
+                                    </button>
+                                </a>     
+                                <hr>
+                            {% endif %}
+                        </div>
+                        
+                        
+                        <div class="mb-5">
+                        </div>
+
+                        <div class="bg-light rounded p-5">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-5 mt-lg-0">
+
+                        <!-- Search Form -->
+                        <div class="mb-5">
+                            <form method="get" action="{% url 'article_view' %}">
+                                <div class="input-group">
+                                    <input name="q" type="text" class="form-control form-control-lg" value="{{ request.GET.q }}" placeholder="{% trans 'Search articles' %}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text bg-transparent text-primary"><i class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+        
+                        <!-- Category List -->
+                        <div class="mb-5">
+                            <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">{% trans 'Categories' %}</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <a href="/blog" class="text-decoration-none h6 m-0"> {% trans 'All' %} </a>
+                                </li>
+                                {% for cat in cats %}  
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                        <a href="{% url 'article_view' cat.id %}" class="text-decoration-none h6 m-0"> {{ cat.title }} </a>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+        
+                        <!-- Recent Post -->
+                        <div class="mb-5">
+                            <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">{% trans 'Recent Post' %}</h3>
+                            {% for la in la_ar %}
+                                <a class="d-flex align-items-center text-decoration-none mb-3" href="{% url 'article_detail' la.id %}">
+                                    <img class="img-fluid rounded" width="50" height="50" src="{{ la.cover_image.url }}" alt="">
+                                    <div class="pl-3">
+                                        <h6 class="m-1"> {{ la.title }} </h6>
+                                        <small> {{ la.created_at|naturaltime }} </small>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+    </body>
+
+{% endblock content %}

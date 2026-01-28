@@ -1,0 +1,26 @@
+<!-- Testimonial Start -->
+{% load i18n %}
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">{% trans 'Testimonial' %}</h5>
+            <h1>{% trans 'What Say Our Students' %}</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="owl-carousel testimonial-carousel">
+                    {% for opinion in opinions %}     
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4"> {{ opinion.message }} </h4>
+                            <img class="img-fluid mx-auto mb-3" src="{{ opinion.image.url }}" alt="">
+                            <h5 class="m-0"> {{ opinion.name }} </h5>
+                            <span> {{ opinion.career }} </span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->

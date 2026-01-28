@@ -1,0 +1,84 @@
+{% load i18n %}
+{% load humanize %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/kh40n2v799fx7z4dt2npe7btkpwgf796aq4ov2qy10v5b38k/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12" style="margin-left: 10px;">
+                {% for comment in video.comment_set.all %}
+    
+                       
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img src="{{ comment.user.profile.profile_image.url }}" alt="{{ comment.user.username }}" height="50px" width="50px" style="border-radius: 50%;">
+                            {{ comment.user.first_name }} {{ comment.user.last_name }}
+                        </div>
+                        <div class="col-lg-7">
+                        </div>
+                        <div class="col-lg-2 justify-content-start">
+                            {% if user.id == comment.user.id or user.is_staff %}
+                                <form method="post" action="{% url 'comment_delete' comment.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="float-right btn btn-outline-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <small style="margin-left: 45px;">
+                        <i class="fa fa-clock"></i>{{ comment.created_at|naturaltime }}
+                    </small>
+                    <div class="card-body">
+                        {{ comment.message|safe }}
+                    </div>
+                    <hr> 
+                    {% empty %}
+                        <div class="card-body text-center" style="color: red;">
+                            <i class="fa fa-exclamation-circle fa-3x"></i>
+                            <br>
+                            <br>
+                            <h3 style="color: red;">{% trans 'There are no comments to show' %}</h3>
+                        </div>  
+                        <hr>  
+                        <br>
+                {% endfor %}
+        </div>
+    </div>
+    <form method="post" action="{% url 'comment_create' %}">
+            {% csrf_token %}
+            <input type="hidden" value="{{ video.id }}" name="video">
+            <input type="hidden" value="{{ user.id }}" name="user">
+            <textarea type="text" name="message" placeholder="Write comment">
+            </textarea>
+            <br>
+        
+
+        <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+            ],
+            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+        });
+        </script>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success">
+                {% trans 'Add comment' %}
+            </button>
+        </div>
+    </form>
+</body>
+</html>

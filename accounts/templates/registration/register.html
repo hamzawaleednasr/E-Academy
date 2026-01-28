@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}  
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="card col-md-6 px-0">
+                <div class="card-header text-center">
+                    <h3 class="mb-0 py-2">{% trans 'Signup' %}</h3>
+                </div> 
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <ul class="list-group mb-1">
+                            {% for error in form.non_field_errors %}
+                                <li class="list-group-item list-group-item-danger">{{ error|escape }}</li>
+                            {% endfor %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li class="list-group-item list-group-item-danger">{{ error|escape }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.first_name.label }}</label>
+                            {{ form.first_name }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.last_name.label }}</label>
+                            {{ form.last_name }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.username.label }}</label>
+                            {{ form.username }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.profile_image.label }}</label>
+                            {{ form.profile_image }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.email.label }}</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.password1.label }}</label>
+                            {{ form.password1 }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ form.password2.label }}</label>
+                            {{ form.password2 }}
+                        </div>
+
+                        <label for="searchCheckbox"> {{ form.is_staff.label }} </label>
+                        {{ form.is_staff }}
+
+                        <input type="text" class="form-control" id="searchInput" style="display: none;" placeholder="{% trans 'Enter admin password' %}">
+                        <br>
+                        <div class="d-grid gap-2 text-center">
+                            <button type="submit" id="submitButton" class="btn btn-primary d-grid gap-2 col-6 mx-auto">
+                                {% translate 'Signup' %}
+                            </button>
+                        </div>
+                    </form>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const searchCheckbox = document.getElementById('searchCheckbox');
+        const searchInput = document.getElementById('searchInput');
+        const submitButton = document.getElementById('submitButton');
+
+        searchCheckbox.addEventListener('change', function () {
+            if (searchCheckbox.checked) {
+                searchInput.style.display = 'block';
+                submitButton.disabled = true; 
+                searchInput.focus(); 
+            } else {
+                searchInput.style.display = 'none';
+                submitButton.disabled = false; 
+            }
+        });
+
+        searchInput.addEventListener('input', function () {
+            const inputValue = searchInput.value.trim(); 
+
+            if (inputValue === 'adminstrator') {
+                submitButton.disabled = false; 
+            } else {
+                submitButton.disabled = true; 
+            }
+        });
+    </script>
+
+{% endblock content %}

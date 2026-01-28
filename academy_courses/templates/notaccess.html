@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="card text-center">
+                <div class="card-header text-center">
+                    <h3>
+                        {% trans 'E-COURSES' %}
+                    </h3>
+                </div>
+                <div class="card-title">
+                    <br>
+                    <h5>
+                        {% trans "You don't have perm" %}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <h6>
+                        {% trans "You don't have permssion to access to this page," %}
+                        {% trans 'Or you open page is not your.' %}
+                    </h6>
+                    <br>
+                    <a href="{% url 'login' %}">
+                        <button class="btn btn-outline-info">
+                            {% trans 'Login With account has perm' %}
+                        </button>
+                    </a>
+                    <br>
+                    ـــــــــــــــــــــــــــــــــــــــــــــ{% trans 'OR' %}ـــــــــــــــــــــــــــــــــــــــــــــــــــــ
+                    <br>
+                    <a href="{% url 'home' %}">
+                        <button class="btn btn-warning">
+                            <i class="fa fa-angle-right"></i>
+                            {% trans 'Go to home page' %}
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+{% endblock content %}

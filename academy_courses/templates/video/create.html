@@ -1,0 +1,21 @@
+{% load i18n %}
+<form method="post" action="{% url 'video_create' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">{% trans 'Title' %}</label>
+    <input type="text" id="title" name="title" class="form-control">
+    <br>
+    <label for="desc">{% trans 'Description' %}</label>
+    <textarea class="form-control" name="desc" id="" cols="30" rows="10"></textarea>
+    <br>
+    <label for="video">{% trans 'Upload Video' %}</label>
+    <input type="file" name="video" accept="video/*" class="form-control">
+    <input type="hidden" value="{{ course.id }}" name="course">
+    <br>
+    <input type="submit" value="{% trans 'Add Video' %}" class="btn btn-success btn-block">
+    <!-- <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-success btn-block">
+            
+        </button>
+    </div> -->
+</form>
+

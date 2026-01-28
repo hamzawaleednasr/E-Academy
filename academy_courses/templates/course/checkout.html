@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+{% load i18n humanize %}
+{% block content %}
+
+    <style>
+        .vertical-line {
+            width: 1px; /* عرض الخط بالبكسل */
+            height: 100%; /* الارتفاع يمتد ليغطي العنصر بالكامل */
+            background-color: #80808081; /* لون الخط */
+            margin: 0 10px; /* هامش يمين ويسار للخط */
+        }
+    </style>
+  
+
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-12 px-0">
+                <div class="card-header">
+                    <h3 class="text-center">
+                        {{ course.name }}
+                    </h3>
+                </div> 
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 text-center">
+                            <img src="{{ course.image.url }}" width="260px" height="290px" style="border-radius: 5%;" alt="{{ user.username }}">
+                            <br>
+                            <br>
+                            <h5>
+                                <div class="badge badge-warning">
+                                    {{ course.price|currency }}                                        
+                                </div>
+                            </h5>
+                            <hr>
+                            <h5> {{ course.name }} </h5>
+                            <br>
+                            <br>
+                            <small class="muted">{% trans 'Last Update: ' %}{{ course.updated_at|naturaltime }} </small>
+                        </div>
+                        <div class="col-xs-1 justify-content-start">
+                            <div class="vertical-line"></div>
+                        </div>                        
+                        <div class="col-lg-8 justify-content-start">
+                            <div class="card-title">
+                                <h5>
+                                    {% trans ' Course Description:' %}
+                                </h5>
+                                <p>
+                                    {{ course.description }}
+                                </p>
+                                <hr>
+                                <br>
+                                <h5>
+                                    {% trans 'Course duration:' %}
+                                </h5>
+                                <p>
+                                    <form class="form-inline ml-auto px-lg-0">
+                                        <div class="input-group">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                style="width: 100px;"
+                                                value="{{ course.hour }}"
+                                                disabled
+                                            />
+                                            <div class="input-group-append">
+                                                <span class="btn btn-info" type="button">
+                                                    <i class="fa fa-clock"></i>
+                                                    {% trans 'hours' %}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <br>
+                                    <form class="form-inline ml-auto px-lg-0">
+                                        <div class="input-group">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                style="width: 100px;"
+                                                value="{{ course.min }}"
+                                                disabled
+                                            />
+                                            <div class="input-group-append">
+                                                <span class="btn btn-info">
+                                                    <i class="fa fa-clock"></i>
+                                                    {% trans 'minutes' %}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <form id="form-user-info">
+                        {% csrf_token %}
+                        <input type="hidden" name="course" id="course" value="{{ course.id }}">
+                    </form>
+                    <br>
+                
+                    <h5 class="text-center">{% trans 'Buy course now!' %}</h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card mx-auto" role="button" style="max-width: 400px;" onclick="createStripeSession()">
+                                <form>
+                                    <div class="card-body text-center">
+                                        <p> {% trans 'Credit Card' %} </p>
+                                        <i class="fa fa-credit-card fa-2x"></i>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="payment-form-container">
+                        <div id="stripe-card" class="card my-3 p-3" style="display: none">
+                            <form id="payment-form">
+                                <div id="payment-element">
+                                </div>
+                                <button id="stripe-submit" class="btn btn-primary mt-3">
+                                    {% trans 'Pay Now' %}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load my_filters %}
+{% load humanize %}
+{% block content %}
+    
+<body>
+    
+    <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">{% trans 'Courses' %}</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="/">{% trans 'Home' %}</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">{% trans 'Courses' %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Courses Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">{% trans 'Courses' %}</h5>
+                <h1>{% trans 'Our Courses' %}</h1>
+            </div>
+            <div class="row">
+                {% for course in courses %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="rounded overflow-hidden mb-2">
+                            <img class="img-fluid" src="{{ course.image.url }}" alt="">
+                            <div class="bg-secondary p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <small class="m-0"><i class="far fa-clock text-primary mr-2"></i> {{ course.hour }}h {{ course.min }}m</small>
+                                </div>
+                                <a class="h5" href="{% url 'course_list' course.id %}"> {{ course.name }} </a>
+                                <div class="border-top mt-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="m-0"> {{ course.price|currency }} </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    {% empty %}
+                    <div class="col-md-12">
+                        <div class="h-100 p-5 bg-white border rounded-3 text-center">
+                            <p>{% trans 'There are no courses to show' %}</p>
+                            <p>
+                                <i class="fa fa-frown fa-2x"></i>
+                            </p>
+                        </div>
+                    </div>                  
+                {% endfor %}
+            </div>
+            
+            {% if user.is_authenticated and user.is_staff %}
+                <br>
+                <a href="{% url 'course_create' %}">
+                    <button type="submit" class="btn btn-primary">
+                        {% trans 'Create' %}
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Courses End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+</body>
+
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block content %}
+    
+    <h1 class="text-center">
+        {{ video.course.name }}
+    </h1>
+    <hr>
+    <br>
+    <div class="card w-75 mb-3 mx-auto">
+        <div class="card-body">
+            <h5 class="card-title"> {{ video.title }} </h5>
+            <hr>
+            <video src="{{ video.video.url }}" width="840" height="500" style="margin-left: 5px;" controls></video>
+            <hr>
+            <br>
+            <h6 class="card-text"> {{ video.desc }} </h6>
+            <hr>
+            <div class="text-muted">    
+                    {% trans 'Updated in ' %}{{ video.updated_at|naturaltime }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card w-75 mb-3 mx-auto">
+        <div class="card-header text-center">
+            <h2>
+                {% trans 'Students comments' %}
+            </h2>
+        </div>
+        <div class="card-body">
+            {% include 'comment/create.html' with video=video %}
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+{% endblock content %}
+
+<!--  -->

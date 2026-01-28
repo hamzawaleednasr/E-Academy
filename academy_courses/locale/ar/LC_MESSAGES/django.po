@@ -1,0 +1,458 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-25 15:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\academy_courses\models.py:37
+msgid "Course title"
+msgstr "عنوان الكورس"
+
+#: .\academy_courses\models.py:38
+msgid "Course description"
+msgstr "وصف الكورس"
+
+#: .\academy_courses\models.py:39 .\academy_courses\models.py:135
+msgid "Price"
+msgstr "السعر"
+
+#: .\academy_courses\models.py:40
+msgid "Course hours"
+msgstr "عدد ساعات الكورس"
+
+#: .\academy_courses\models.py:41
+msgid "Course minutes"
+msgstr "عدد دقائق الكورس"
+
+#: .\academy_courses\models.py:42
+msgid "Cover image"
+msgstr "صورة الغلاف"
+
+#: .\academy_courses\models.py:43 .\academy_courses\models.py:54
+#: .\academy_courses\models.py:76 .\academy_courses\models.py:115
+#: .\academy_courses\models.py:121 .\academy_courses\models.py:136
+msgid "Created at"
+msgstr "تم إنشائها في"
+
+#: .\academy_courses\models.py:44 .\academy_courses\models.py:56
+#: .\academy_courses\models.py:116 .\academy_courses\models.py:122
+msgid "Updated at"
+msgstr "تم تحديثها في"
+
+#: .\academy_courses\models.py:51
+msgid "Video title"
+msgstr "عنوان الفيديو"
+
+#: .\academy_courses\models.py:53 .\academy_courses\models.py:74
+msgid "Video"
+msgstr "الفيديو"
+
+#: .\academy_courses\models.py:55 .\academy_courses\models.py:111
+#: .\academy_courses\models.py:134
+msgid "Course"
+msgstr "الكورس"
+
+#: .\academy_courses\models.py:63
+msgid "Name"
+msgstr "الإسم"
+
+#: .\academy_courses\models.py:64
+msgid "career"
+msgstr "الوظيفة"
+
+#: .\academy_courses\models.py:65
+msgid "Personal photo"
+msgstr "صورة شخصية"
+
+#: .\academy_courses\models.py:66
+msgid "Message"
+msgstr "الرسالة"
+
+#: .\academy_courses\models.py:73 .\academy_courses\models.py:110
+msgid "User"
+msgstr "المستخدم"
+
+#: .\academy_courses\models.py:75
+msgid "Comment"
+msgstr "التعليق"
+
+#: .\academy_courses\models.py:80 .\academy_courses\models.py:91
+#: .\academy_courses\templates\video\create.html:4
+msgid "Title"
+msgstr "العنوان"
+
+#: .\academy_courses\models.py:81
+msgid "Slider image"
+msgstr "صورة السلايدر"
+
+#: .\academy_courses\models.py:83
+msgid "Is active"
+msgstr "أول صوره"
+
+#: .\academy_courses\models.py:93
+msgid "Icon"
+msgstr "أيقونة"
+
+#: .\academy_courses\models.py:98
+msgid "Url"
+msgstr "الرابط"
+
+#: .\academy_courses\models.py:105
+msgid "Pending"
+msgstr "قيد االتنفيذ"
+
+#: .\academy_courses\models.py:106
+msgid "Completed"
+msgstr "مكتمل"
+
+#: .\academy_courses\models.py:113
+msgid "Status"
+msgstr "الحالة"
+
+#: .\academy_courses\models.py:120
+msgid "Transaction"
+msgstr "عملية الدفع"
+
+#: .\academy_courses\models.py:128 .\academy_courses\models.py:133
+msgid "Order"
+msgstr "الطلب"
+
+#: .\academy_courses\models.py:129
+msgid "Orders"
+msgstr "الطلبات"
+
+#: .\academy_courses\templates\about.html:10
+#: .\academy_courses\templates\about.html:14
+#: .\academy_courses\templates\partials\footer.html:46
+#: .\academy_courses\templates\partials\header.html:62
+msgid "About"
+msgstr "عنا"
+
+#: .\academy_courses\templates\about.html:12
+#: .\academy_courses\templates\course.html:15
+#: .\academy_courses\templates\partials\header.html:61
+msgid "Home"
+msgstr "الصفحة الرئيسيه"
+
+#: .\academy_courses\templates\about.html:31
+msgid "About Us"
+msgstr "عنا"
+
+#: .\academy_courses\templates\about.html:32
+msgid "Innovative Way To Learn"
+msgstr "أفضل طريق للتعلم"
+
+#: .\academy_courses\templates\about.html:34
+msgid "Welcome to E-COURSES, your go-to destination for online education."
+msgstr "أهلا بك في إي-كورسات، طريقك للتعلم عبر الإنترنت"
+
+#: .\academy_courses\templates\about.html:34
+msgid ""
+"We offer a wide range of high-quality courses and informative articles to "
+"empower learners of all levels."
+msgstr "نوفر لك كورسات ومقالات بجوده عالية"
+
+#: .\academy_courses\templates\about.html:34
+msgid "Join us on a journey of continuous learning and personal growth."
+msgstr "إنضم لنا في رحلتك الى تطوير مهاراتك"
+
+#: .\academy_courses\templates\about.html:34
+msgid "Thank you for choosing E-COURSES as your trusted source of knowledge."
+msgstr "شكرا لك لإختيار إي-كورسيس المصدر الموثوق للمعرفه والتعلم"
+
+#: .\academy_courses\templates\about.html:35
+#: .\academy_courses\templates\partials\slider.html:18
+msgid "Learn More"
+msgstr "المزيد"
+
+#: .\academy_courses\templates\base.html:8
+#: .\academy_courses\templates\course\checkout-complete.html:21
+#: .\academy_courses\templates\notaccess.html:10
+msgid "E-COURSES"
+msgstr "إي-كورسات"
+
+#: .\academy_courses\templates\comment\create.html:47
+msgid "There are no comments to show"
+msgstr "لا يوجد تعليقات بعد"
+
+#: .\academy_courses\templates\comment\create.html:79
+msgid "Add comment"
+msgstr "أضف تعليق"
+
+#: .\academy_courses\templates\common\testimonial.html:6
+msgid "Testimonial"
+msgstr "آراء الطلاب"
+
+#: .\academy_courses\templates\common\testimonial.html:7
+msgid "What Say Our Students"
+msgstr "ماذا يقول طلابنا عنا"
+
+#: .\academy_courses\templates\course.html:13
+#: .\academy_courses\templates\course.html:17
+#: .\academy_courses\templates\course.html:29
+#: .\academy_courses\templates\index.html:14
+#: .\academy_courses\templates\partials\header.html:63
+msgid "Courses"
+msgstr "كورسات"
+
+#: .\academy_courses\templates\course.html:30
+#: .\academy_courses\templates\partials\footer.html:18
+msgid "Our Courses"
+msgstr "كورساتنا"
+
+#: .\academy_courses\templates\course.html:53
+msgid "There are no courses to show"
+msgstr "لا يوجد كورسات للعرض"
+
+#: .\academy_courses\templates\course.html:66
+#: .\academy_courses\templates\course\create.html:22
+msgid "Create"
+msgstr "إنشاء"
+
+#: .\academy_courses\templates\course\checkout-complete.html:29
+msgid "Checkout completed successfully"
+msgstr "تمت عملية الدفع بنجاح"
+
+#: .\academy_courses\templates\course\checkout-complete.html:31
+msgid "Now! You can enjoy and study your course"
+msgstr "الآن! يمكنك الاستمتاع بالكورس الخاص بك"
+
+#: .\academy_courses\templates\course\checkout-complete.html:35
+msgid "Go to course"
+msgstr "الذهاب للكورس"
+
+#: .\academy_courses\templates\course\checkout-complete.html:41
+msgid "Go to homepage"
+msgstr "الذهاب للصفحه الرئيسيه"
+
+#: .\academy_courses\templates\course\checkout.html:39
+msgid "Last Update: "
+msgstr "آخر تحديث: "
+
+#: .\academy_courses\templates\course\checkout.html:47
+msgid " Course Description:"
+msgstr " عن الكورس:"
+
+#: .\academy_courses\templates\course\checkout.html:55
+msgid "Course duration:"
+msgstr "مدة الكورس:"
+
+#: .\academy_courses\templates\course\checkout.html:70
+msgid "hours"
+msgstr "ساعات"
+
+#: .\academy_courses\templates\course\checkout.html:88
+msgid "minutes"
+msgstr "دقائق"
+
+#: .\academy_courses\templates\course\checkout.html:104
+msgid "Buy course now!"
+msgstr "إشتري الكورس الآن!"
+
+#: .\academy_courses\templates\course\checkout.html:110
+msgid "Credit Card"
+msgstr "بطاقة إئتمانية"
+
+#: .\academy_courses\templates\course\checkout.html:123
+msgid "Pay Now"
+msgstr "إدفع الآن"
+
+#: .\academy_courses\templates\course\create.html:9
+msgid "Create Course"
+msgstr "إنشاء كورس جديد"
+
+#: .\academy_courses\templates\course\delete.html:9
+#: .\academy_courses\templates\video\delete.html:9
+msgid "Warning!"
+msgstr "تحذير"
+
+#: .\academy_courses\templates\course\delete.html:16
+msgid "Do you want to delete this course "
+msgstr "هل أنت متأكد من انك تريد حذف هذا الكورس "
+
+#: .\academy_courses\templates\course\delete.html:16
+#: .\academy_courses\templates\video\delete.html:16
+msgid "?"
+msgstr "؟"
+
+#: .\academy_courses\templates\course\delete.html:20
+#: .\academy_courses\templates\video\delete.html:20
+msgid "Delete"
+msgstr "حذف"
+
+#: .\academy_courses\templates\course\update.html:9
+#: .\academy_courses\templates\course_list.html:74
+msgid "Edit Course"
+msgstr "تعديل الكورس"
+
+#: .\academy_courses\templates\course\update.html:22
+#: .\academy_courses\templates\video\update.html:22
+msgid "Save"
+msgstr "حفظ"
+
+#: .\academy_courses\templates\course_list.html:37
+msgid "Videos"
+msgstr "الفيديوهات"
+
+#: .\academy_courses\templates\course_list.html:61
+msgid "There are no videos to show"
+msgstr "لا يوجد فيديوهات حتى الآن"
+
+#: .\academy_courses\templates\course_list.html:79
+msgid "Delete Course"
+msgstr "حذف الكورس"
+
+#: .\academy_courses\templates\course_list.html:95
+#: .\academy_courses\templates\video\create.html:14
+msgid "Add Video"
+msgstr "إضافة كورس"
+
+#: .\academy_courses\templates\course_list.html:113
+msgid "Course Description"
+msgstr "عن الكورس"
+
+#: .\academy_courses\templates\course_page.html:21
+msgid "Updated in "
+msgstr "تم التحديث في: "
+
+#: .\academy_courses\templates\course_page.html:29
+msgid "Students comments"
+msgstr "تعليقات الطلاب"
+
+#: .\academy_courses\templates\index.html:15
+msgid "Our Popular Courses"
+msgstr "كورساتنا المشهورة"
+
+#: .\academy_courses\templates\index.html:49
+#: .\academy_courses\templates\partials\footer.html:28
+msgid "Our Blog"
+msgstr "مدونتنا"
+
+#: .\academy_courses\templates\index.html:50
+msgid "Latest From Our Blog"
+msgstr "أحدث المقالات"
+
+#: .\academy_courses\templates\notaccess.html:16
+msgid "You don't have perm"
+msgstr "ليس لديك إذن."
+
+#: .\academy_courses\templates\notaccess.html:21
+msgid "You don't have permssion to access to this page,"
+msgstr "ليس لديك إذن للوصول لتلك الصفحة،"
+
+#: .\academy_courses\templates\notaccess.html:22
+msgid "Or you open page is not your."
+msgstr "أو هذه الصفحه ليست لك."
+
+#: .\academy_courses\templates\notaccess.html:27
+msgid "Login With account has perm"
+msgstr "سجِِل الدخول بحساب لديه إذن"
+
+#: .\academy_courses\templates\notaccess.html:31
+msgid "OR"
+msgstr "أو"
+
+#: .\academy_courses\templates\notaccess.html:36
+msgid "Go to home page"
+msgstr "إذهب للصفحه الرئيسيه"
+
+#: .\academy_courses\templates\partials\footer.html:8
+msgid "Get In Touch"
+msgstr "ابقى على تواصل"
+
+#: .\academy_courses\templates\partials\footer.html:9
+msgid "Egypt, Cairo (EG)"
+msgstr "مصر، القاهرة(EG)"
+
+#: .\academy_courses\templates\partials\footer.html:40
+msgid "Hamza Waleed"
+msgstr "حمزة وليد"
+
+#: .\academy_courses\templates\partials\footer.html:40
+msgid ". All Rights Reserved. Designed by"
+msgstr ". جميع الحقوق محفوظة. تم التصميم بواسطة"
+
+#: .\academy_courses\templates\partials\header.html:7
+#: .\academy_courses\templates\partials\header.html:54
+msgid "E-"
+msgstr "إي-"
+
+#: .\academy_courses\templates\partials\header.html:7
+#: .\academy_courses\templates\partials\header.html:54
+msgid "COURSES"
+msgstr "كورسات"
+
+#: .\academy_courses\templates\partials\header.html:22
+msgid " Profile"
+msgstr "الملف الشخصي"
+
+#: .\academy_courses\templates\partials\header.html:24
+msgid "Language"
+msgstr "اللغة"
+
+#: .\academy_courses\templates\partials\header.html:26
+msgid "Arabic"
+msgstr "اللغة العربية"
+
+#: .\academy_courses\templates\partials\header.html:28
+msgid "English"
+msgstr "اللغة الإنجليزية"
+
+#: .\academy_courses\templates\partials\header.html:31
+msgid " Logout"
+msgstr " تسجيل الخروج"
+
+#: .\academy_courses\templates\partials\header.html:38
+msgid "Join Now"
+msgstr "إنضم الآن"
+
+#: .\academy_courses\templates\partials\header.html:39
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\academy_courses\templates\partials\header.html:64
+msgid "Blog"
+msgstr "المدونة"
+
+#: .\academy_courses\templates\partials\header.html:77
+msgid "Search Courses"
+msgstr "البحث في الكورسات"
+
+#: .\academy_courses\templates\partials\slider.html:16
+msgid "Best Online Courses"
+msgstr "أفضل كورسات عبر الإنترنت"
+
+#: .\academy_courses\templates\video\create.html:7
+msgid "Description"
+msgstr "الوصف"
+
+#: .\academy_courses\templates\video\create.html:10
+msgid "Upload Video"
+msgstr "إرفع فيديو"
+
+#: .\academy_courses\templates\video\delete.html:16
+msgid "Do you want to delete this video "
+msgstr "هل أنت متأكد من أنك تريد حذف هذا الفيديو "
+
+#: .\academy_courses\templates\video\update.html:9
+msgid "Edit Video"
+msgstr "تعديل الفيديو"
+
+#: .\academy_courses\views.py:271
+msgid "Please enter valid information."
+msgstr "رجاءاً أدخل معلومات صالحه"

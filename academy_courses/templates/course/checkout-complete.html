@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    
+    <script>
+        window.onload = function() {
+            if(!window.location.hash) {
+                window.location = window.location + '#loaded';
+                window.location.reload();
+            }
+        }
+    </script>
+
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6">
+            <div class="card text-center">
+                <div class="card-header text-primary">
+                    <h3>
+                        {% trans 'E-COURSES' %}
+                    </h3>
+                </div>
+                <div class="card-title text-center">
+                    <br>
+                    <i class="fa fa-check fa-3x"></i>
+                </div>
+                <div class="card-body">
+                    {% trans 'Checkout completed successfully' %}
+                    <br>
+                    {% trans 'Now! You can enjoy and study your course' %}
+                    <hr>
+                    <a href="{% url 'course_list' id %}">
+                        <button class="btn btn-primary">
+                            {% trans 'Go to course' %}
+                        </button>
+                    </a>
+                    <a href="{% url 'home' %}">
+                        <button class="btn btn-warning">
+                            <i class="fa fa-angle-right"></i>
+                            {% trans 'Go to homepage' %}
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+
+
+{% endblock content %}

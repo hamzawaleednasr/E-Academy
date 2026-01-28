@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block content %}
+
+
+
+
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* لجعل الأزرار تغطي المسافات الفارغة */
+            padding: 10px; /* تضبيط التباعد الداخلي حول الأزرار إذا لزم الأمر */
+        }
+
+        .button-container a {
+            text-decoration: none; /* لإزالة تزيين الروابط إذا كان هناك */
+        }
+
+        .button {
+            flex: 1; /* لتوزيع المساحة بالتساوي بين الأزرار */
+            margin: 0 5px; /* تضبيط المسافة بين الأزرار إذا كنت تريد مسافة بينها */
+        }
+
+    </style>
+
+    <h1 class="text-center">
+        {{ cou.name }}            
+    </h1>
+    <hr>
+    <br>
+                
+        <div class="row" style="margin-left: 50px;">
+            <div class="col-lg-8">
+                <div class="card w-100 mb-3">
+                    <h5 class="card-header">
+                        {% trans 'Videos' %}
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        {% for video in videos %}
+                            <li class="list-group-item">
+                                <a href="{% url 'course_page' video.id %}">
+                                    {{ video.title }}
+                                </a>
+                                
+                                {% if user.is_staff %}
+                                    <span class="float-right">
+                                        <a href="{% url 'video_update' video.id %}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    |
+                                        <a href="{% url 'video_delete' video.id %}">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </span>
+                                {% endif %}
+                            </li>
+                            {% empty %}
+                                <div class="col-md-12">
+                                    <div class="h-100 p-5 bg-white rounded-3 text-center">
+                                        <p>{% trans 'There are no videos to show' %}</p>
+                                        <p>
+                                            <i class="fa fa-video fa-2x"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                        {% endfor %}
+                    </ul>
+
+                    {% if user.is_authenticated and user.is_staff %}
+                        <div class="button-container">
+                            <a href="{% url 'course_update' cou.id %}">
+                                <button type="submit" class="btn btn-primary">
+                                    {% trans 'Edit Course' %}
+                                </button>
+                            </a>
+                            <a href="{% url 'course_delete' cou.id %}">
+                                <button type="submit" class="btn btn-danger">
+                                    {% trans 'Delete Course' %}
+                                </button>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <br>
+
+        
+        {% if user.is_staff %}
+            <div class="row" style="margin-left: 50px;">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            {% trans 'Add Video' %}
+                        </div>
+                        <div class="card-body">
+                            {% include 'video/create.html' with course=cou %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        
+        
+        <hr>
+        <br>
+        <br>
+        <div class="row" style="margin-left: 50px;">
+            <div class="col-lg-8">
+                <div class="col-lg-15 mt-5 mt-lg-0">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header"> {% trans 'Course Description' %} </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ cou.name }}</h5>
+                            <p class="card-text"> {{ cou.description }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        
+    
+{% endblock content %}
+

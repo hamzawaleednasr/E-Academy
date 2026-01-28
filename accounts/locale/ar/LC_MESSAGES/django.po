@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-25 11:50+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\accounts\forms.py:17 .\accounts\forms.py:40
+msgid "Username"
+msgstr "إسم المستخدم"
+
+#: .\accounts\forms.py:21 .\accounts\forms.py:48
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: .\accounts\forms.py:31
+msgid "First Name"
+msgstr "الإسم الأول"
+
+#: .\accounts\forms.py:35
+msgid "Last Name"
+msgstr "الإسم الأخير"
+
+#: .\accounts\forms.py:44
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: .\accounts\forms.py:53
+msgid "Password Confirmation"
+msgstr "تأكيد كلمة المرور"
+
+#: .\accounts\forms.py:58
+msgid "Are you admin? "
+msgstr "هل أنت مسؤول؟ "
+
+#: .\accounts\models.py:8
+msgid "User"
+msgstr "مستخدم"
+
+#: .\accounts\models.py:9
+msgid "Profile photo"
+msgstr "صورة الملف الشخصي"
+
+#: .\accounts\models.py:10
+msgid "Your Courses"
+msgstr "كورساتك"
+
+#: .\accounts\templates\common\profile.html:21
+msgid "Hello "
+msgstr "أهلا "
+
+#: .\accounts\templates\common\profile.html:21
+msgid "👋"
+msgstr "👋"
+
+#: .\accounts\templates\common\profile.html:38
+msgid "admin"
+msgstr "مسؤول"
+
+#: .\accounts\templates\common\profile.html:42
+msgid "student"
+msgstr "طالب"
+
+#: .\accounts\templates\common\profile.html:59
+msgid "Save"
+msgstr "حفظ"
+
+#: .\accounts\templates\registration\login.html:10
+#: .\accounts\templates\registration\login.html:18
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\accounts\templates\registration\register.html:10
+#: .\accounts\templates\registration\register.html:18
+msgid "Signup"
+msgstr "إنشاء حساب"
