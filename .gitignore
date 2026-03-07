@@ -27,7 +27,6 @@ db.sqlite3-journal
 # Static & Media
 # ===============================
 staticfiles/
-media/
 
 # ===============================
 # Environment & Secrets
